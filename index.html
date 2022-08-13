@@ -6,10 +6,13 @@
 
     <!-- Importing the javascript files -->
     <script src="./Rotation.js"></script>
+
+    <script src="./coin.js"></script>
+    <script src="./fish.js"></script>
   </head>
   <body>
     <a-scene>
-      <!---creating the assets-->
+      <!---Assets-->
       <a-a-assets>
         <a-asset-item id="island" src="assets/island/scene.gltf"></a-asset-item>
 
@@ -22,31 +25,32 @@
           src="assets/coral_fish/scene.gltf"
         ></a-asset-item>
         <a-asset-item id="turtle" src="assets/turtle/scene.gltf"></a-asset-item>
+        <a-asset-item id="trout" src="assets/trout/scene.gltf"></a-asset-item>
         <a-asset-item
           id="scuba_driver"
           src="assets/scuba_driver/scene.gltf"
         ></a-asset-item>
       </a-a-assets>
 
-      <!-- sky -->
+      <!-- Sky -->
       <a-sky
         geometry="primitive: sphere;"
-        material="shader: gradient; bottomColor: #1B2242; topColor:rgb(184, 236, 255);offset: 0.0001;"
+        material="shader: gradient; bottomColor: #00009e; topColor:109 205 227;offset: 0.0001;"
         radius="100"
         theta-length="180"
         side="double"
         animation="property: rotation; to: 0 300 0; easing:linear; loop: true; dur: 500000"
       >
-        <!------------------------------------ Models ------------------------------------------>
+        <!------------------------------------GLTF Models------------------------------------------>
 
-        <!--Initializing the Island Model-->
+        <!--Island-->
         <a-entity
           gltf-model="#island"
           scale="1 1 1"
           position="0 -15 -40"
         ></a-entity>
 
-        <!--Created the treasures-->
+        <!--Trasures-->
         <a-entity
           gltf-model="#treasure"
           scale="15 15 15"
@@ -68,11 +72,17 @@
           rotation="0 90 0"
         ></a-entity>
 
-        <!--Created the Turtle-->
+        <!--Fish Entity-->
+        <a-entity position="0 0 0" id="fishModels" fish> </a-entity>
+
+        <!--Treasure Entity-->
+        <a-entity position="0 0 0" id="treasureCoins" coins> </a-entity>
+
+        <!--Turtule-->
         <a-entity
           gltf-model="#turtle"
           scale="0.005 0.005 0.005"
-          position="0 0 0"
+          position="0 -30 0"
           rotation="0 90 0"
         ></a-entity>
       </a-sky>
@@ -96,7 +106,7 @@
 
       <a-cylinder color="#00009e" radius="100" opacity="0.2"></a-cylinder>
 
-      <!-- Changing some settings in the camera -->
+      <!-- CAMERA -->
       <a-entity
         camera="active: true"
         look-controls
