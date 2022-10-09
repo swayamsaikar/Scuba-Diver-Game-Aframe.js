@@ -28,6 +28,9 @@ AFRAME.registerComponent("coins", {
       dur: 1000,
     });
 
+    // * SphereRadius property can also be called as collisionRadius as Reference
+    coinEl.setAttribute("static-body", { shape: "sphere", sphereRadius: 6 });
+
     treasureEntity.appendChild(coinEl);
   },
 });

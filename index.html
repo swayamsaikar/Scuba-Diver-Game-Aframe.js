@@ -9,6 +9,7 @@
 
     <script src="./coin.js"></script>
     <script src="./fish.js"></script>
+    <script src="./gameplay.js"></script>
   </head>
   <body>
     <a-scene>
@@ -94,6 +95,8 @@
         position="5 0 15"
         rotation="0 90 -20"
         diver-rotation
+        dynamic-body="mass:0"
+        gameplay
       >
         <a-sphere
           id="bubble1"

@@ -30,6 +30,7 @@ AFRAME.registerComponent("fish", {
     });
 
     fishEl.setAttribute("animation-mixer", {});
+    fishEl.setAttribute("static-body", { shape: "sphere", sphereRadius: 2 });
 
     fishModelEntity.appendChild(fishEl);
   },
